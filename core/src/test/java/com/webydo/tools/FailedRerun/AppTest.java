@@ -1,4 +1,4 @@
-package com.webydo.tools.FiledRerun;
+package com.webydo.tools.FailedRerun;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
