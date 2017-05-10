@@ -1,2 +1,5 @@
 core/target
-*.png
+*.pngcore/.idea/
+core/core.iml
+ClassDiagram.png
+core/.idea/
