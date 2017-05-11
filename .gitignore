@@ -3,3 +3,4 @@ core/target
 core/core.iml
 ClassDiagram.png
 core/.idea/
+core/log4j-application.log
