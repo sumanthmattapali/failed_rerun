@@ -21,7 +21,7 @@ public class JSystemScenarioBuilder extends RepeatScenarioBuilder {
     }
 
     @Override
-    public void buildNewScenario() {
+    public void buildNewScenario(String newScenarioPath) {
         logger.info("Build the new JSystem scenario " + scenarioName);
     }
 

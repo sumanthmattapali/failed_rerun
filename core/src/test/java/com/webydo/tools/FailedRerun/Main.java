@@ -19,7 +19,7 @@ public class Main {
         BasicConfigurator.configure();
         try {
             RepeatScenarioBuilder builder = new JSystemScenarioBuilder(new JSystemScenario(), "JSystemScenario", "path");
-            builder.buildNewScenario();
+            builder.buildNewScenario("");
             builder.save();
         }
         catch (InvalidParameterException e) {

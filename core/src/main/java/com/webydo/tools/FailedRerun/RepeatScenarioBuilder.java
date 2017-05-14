@@ -13,30 +13,24 @@ import java.util.List;
 public abstract class RepeatScenarioBuilder {
     private static final Logger logger = LogManager.getLogger(RepeatScenarioBuilder.class);
 
-    final protected Scenario scenario;
-    final protected String scenarioName;
     final protected String failedScenarioPath;
 
-    public RepeatScenarioBuilder(final Scenario scenario, String scenarioName, String failedScenarioPath) throws InvalidParameterException {
+    public RepeatScenarioBuilder(String failedScenarioPath) throws InvalidParameterException {
         if(failedScenarioPath == null || failedScenarioPath.isEmpty())
             throw new InvalidParameterException("The given failed scenario path is NULL or EMPTY");
         if (!new File(failedScenarioPath).exists())
             throw new InvalidParameterException("The given failed scenario path " + failedScenarioPath + " doesn't exist");
         this.failedScenarioPath = failedScenarioPath;
-
-        if(scenario == null)
-            throw new InvalidParameterException("The given scenario instance is NULL");
-        this.scenario = scenario;
-
-        if(scenarioName == null || scenarioName.isEmpty())
-            throw new InvalidParameterException("The given scenario name is NULL or EMPTY");
-        this.scenarioName = scenarioName;
     }
 
-    abstract public void buildNewScenario();
-    abstract protected Scenario createNewScenario();
+    public void buildNewScenario(String newScenarioDirPath, String newScenarioName) {
+        final Scenario newScenario = createNewScenario(newScenarioName);
+        for (Test test: getFailedTests()) {
+            newScenario.addTest(test);
+        }
+        newScenario.save(newScenarioDirPath);
+    }
+
+    abstract protected Scenario createNewScenario(String newScenarioName);
     abstract protected List<Test> getFailedTests();
-    public void save() {
-        logger.info("Save the created scenario " + scenarioName);
-    }
 }
