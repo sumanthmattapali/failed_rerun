@@ -1,6 +1,5 @@
 package com.webydo.tools.FailedRerun;
 
-import com.webydo.tools.FailedRerun.jsystem.JSystemScenario;
 import com.webydo.tools.FailedRerun.jsystem.JSystemScenarioBuilder;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
@@ -18,9 +17,12 @@ public class Main {
 
         BasicConfigurator.configure();
         try {
-            RepeatScenarioBuilder builder = new JSystemScenarioBuilder(new JSystemScenario(), "JSystemScenario", "path");
-            builder.buildNewScenario("");
-            builder.save();
+            RepeatScenarioBuilder builder = new JSystemScenarioBuilder("test/scenarious/jsystem/failed.xml");
+            assert(builder.getFailedTests().size() != 0);
+            for (Test test: builder.getFailedTests())
+                test.getFailMsg();
+            Scenario scenario = builder.createNewScenario("adsfa");
+            assert(scenario.getTests().size() == builder.getFailedTests().size());
         }
         catch (InvalidParameterException e) {
             logger.error("Can't build a new scenario", e);

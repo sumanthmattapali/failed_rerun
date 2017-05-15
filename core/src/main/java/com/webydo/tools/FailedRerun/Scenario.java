@@ -8,9 +8,9 @@ import java.util.List;
  */
 public abstract class Scenario {
     final protected String name;
-    final protected List<Test> tests;
+    final private List<Test> tests;
 
-    public Scenario(String name) {
+    protected Scenario(String name) {
         this.name = name;
         tests = new LinkedList<>();
     }
@@ -18,4 +18,5 @@ public abstract class Scenario {
     public String getName() { return name; }
     public void addTest(final Test test) { tests.add(test); }
     abstract public void save(String builtScenarioPath);
+    public List<Test> getTests() { return tests; }
 }

@@ -11,8 +11,17 @@ import org.apache.log4j.Logger;
 public class JSystemScenario extends Scenario {
     private static final Logger logger = LogManager.getLogger(JSystemScenario.class);
 
+    public JSystemScenario(String name) {
+        super(name);
+    }
+
     @Override
     public void addTest(Test test) {
         logger.info("Add the test " + test.toString() + " to the JSystem scenario " + name);
+    }
+
+    @Override
+    public void save(String builtScenarioPath) {
+
     }
 }

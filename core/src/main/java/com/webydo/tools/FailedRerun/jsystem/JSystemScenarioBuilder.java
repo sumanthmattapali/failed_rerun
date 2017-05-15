@@ -7,6 +7,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.security.InvalidParameterException;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -15,25 +16,19 @@ import java.util.List;
 public class JSystemScenarioBuilder extends RepeatScenarioBuilder {
     private static final Logger logger = LogManager.getLogger(JSystemScenarioBuilder.class);
 
-    public JSystemScenarioBuilder(Scenario scenario, String scenarioName, String failedScenarioPath) throws InvalidParameterException {
-        super(scenario, scenarioName, failedScenarioPath);
-        logger.info("Constructor for the new JSystem scenario " + scenarioName + " of the failed scenario " + failedScenarioPath);
+    public JSystemScenarioBuilder(String failedScenarioPath) throws InvalidParameterException {
+        super(failedScenarioPath);
     }
 
     @Override
-    public void buildNewScenario(String newScenarioPath) {
-        logger.info("Build the new JSystem scenario " + scenarioName);
-    }
-
-    @Override
-    protected Scenario createNewScenario() {
-        logger.info("Create the new JSystem scenario " + scenarioName);
+    protected Scenario createNewScenario(String newScenarioName) {
         return null;
     }
 
     @Override
     protected List<Test> getFailedTests() {
         logger.info("Get the the failed test of the JSystem scenario " + failedScenarioPath);
-        return null;
+        LinkedList<Test> tests = new LinkedList<>();
+        return tests;
     }
 }

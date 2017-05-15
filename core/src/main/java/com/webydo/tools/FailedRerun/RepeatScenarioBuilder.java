@@ -15,7 +15,7 @@ public abstract class RepeatScenarioBuilder {
 
     final protected String failedScenarioPath;
 
-    public RepeatScenarioBuilder(String failedScenarioPath) throws InvalidParameterException {
+    protected RepeatScenarioBuilder(String failedScenarioPath) throws InvalidParameterException {
         if(failedScenarioPath == null || failedScenarioPath.isEmpty())
             throw new InvalidParameterException("The given failed scenario path is NULL or EMPTY");
         if (!new File(failedScenarioPath).exists())
