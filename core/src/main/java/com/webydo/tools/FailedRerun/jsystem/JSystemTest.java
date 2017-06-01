@@ -6,7 +6,14 @@ import com.webydo.tools.FailedRerun.Test;
  * A JSystem test instance
  */
 public class JSystemTest extends Test {
-    public JSystemTest(String failedMsg) {
+    private String className;
+
+    public JSystemTest(String className, String failedMsg) {
         super(failedMsg);
+        this.className = className;
+    }
+
+    public String getClassName() {
+        return className;
     }
 }

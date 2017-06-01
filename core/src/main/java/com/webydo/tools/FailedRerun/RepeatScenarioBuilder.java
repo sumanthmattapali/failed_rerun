@@ -3,7 +3,7 @@ package com.webydo.tools.FailedRerun;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.io.File;
+import java.nio.file.Path;
 import java.security.InvalidParameterException;
 import java.util.List;
 
@@ -13,24 +13,24 @@ import java.util.List;
 public abstract class RepeatScenarioBuilder {
     private static final Logger logger = LogManager.getLogger(RepeatScenarioBuilder.class);
 
-    final protected String failedScenarioPath;
+    final protected Path reportPath;
 
-    protected RepeatScenarioBuilder(String failedScenarioPath) throws InvalidParameterException {
-        if(failedScenarioPath == null || failedScenarioPath.isEmpty())
+    protected RepeatScenarioBuilder(final Path reportPath) throws InvalidParameterException {
+        if(reportPath == null)
             throw new InvalidParameterException("The given failed scenario path is NULL or EMPTY");
-        if (!new File(failedScenarioPath).exists())
-            throw new InvalidParameterException("The given failed scenario path " + failedScenarioPath + " doesn't exist");
-        this.failedScenarioPath = failedScenarioPath;
+        if (!reportPath.toFile().exists())
+            throw new InvalidParameterException("The given failed scenario path " + reportPath + " doesn't exist");
+        this.reportPath = reportPath;
     }
 
-    public void buildNewScenario(String newScenarioDirPath, String newScenarioName) {
-        final Scenario newScenario = createNewScenario(newScenarioName);
+    public void buildNewScenario(final Path newScenarioPath) {
+        final Scenario newScenario = createNewScenario();
         for (Test test: getFailedTests()) {
             newScenario.addTest(test);
         }
-        newScenario.save(newScenarioDirPath);
+        newScenario.save(newScenarioPath);
     }
 
-    abstract protected Scenario createNewScenario(String newScenarioName);
+    abstract protected Scenario createNewScenario();
     abstract protected List<Test> getFailedTests();
 }

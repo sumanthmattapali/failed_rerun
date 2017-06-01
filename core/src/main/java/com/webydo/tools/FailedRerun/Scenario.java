@@ -1,5 +1,6 @@
 package com.webydo.tools.FailedRerun;
 
+import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  */
 public abstract class Scenario {
     final protected String name;
-    final private List<Test> tests;
+    final protected List<Test> tests;
 
     protected Scenario(String name) {
         this.name = name;
@@ -17,6 +18,6 @@ public abstract class Scenario {
 
     public String getName() { return name; }
     public void addTest(final Test test) { tests.add(test); }
-    abstract public void save(String builtScenarioPath);
+    abstract public void save(Path builtScenarioPath);
     public List<Test> getTests() { return tests; }
 }
