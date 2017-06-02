@@ -13,4 +13,3 @@ There 2 parts in the project:
 ## Used resources for implementation:
 
 	- Java for the scenario builder. XML parser for building a JSystem's scenario. JSON parser for building a Cucumber's scenario 
-	- Groovy for the Jenkins plugin
