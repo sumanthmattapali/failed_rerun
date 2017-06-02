@@ -1,7 +1,11 @@
-core/target
+*/target
 *.pngcore/.idea/
 core/core.iml
 ClassDiagram.png
 core/.idea/
 core/log4j-application.log
 .idea
+*/*.iml
+jenkins/*/target
+jenkins/failedRetry/work
+jenkins/failedRetry/*.iml
