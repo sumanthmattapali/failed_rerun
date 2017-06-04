@@ -21,10 +21,8 @@ public class Main {
         BasicConfigurator.configure();
         try {
             Path curDir = new File(".").getAbsoluteFile().toPath();
-            final RepeatScenarioBuilder builder = new JSystemScenarioBuilder(Paths.get(curDir + "/src/test/scenarious/jsystem/failed.xml"));
-            assert(builder.getFailedTests().size() != 0): "The number of failed tests should be > 0";
-            builder.buildNewScenario(Paths.get(curDir + "/src/test/scenarious/jsystem/new.xml"));
-
+            final RepeatScenarioBuilder builder = new JSystemScenarioBuilder(Paths.get(curDir + "/src/test/scenarious/jsystem/failed_results.xml"));
+            builder.buildNewScenario(Paths.get(curDir + "/src/test/scenarious/jsystem/new.xml"), Paths.get(curDir + "/src/test/scenarious/jsystem/failed_scenario.xml"));
         }
         catch (InvalidParameterException e) {
             logger.error("Can't build a new scenario", e);

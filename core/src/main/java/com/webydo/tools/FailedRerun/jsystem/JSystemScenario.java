@@ -13,19 +13,19 @@ import java.nio.file.Path;
 public class JSystemScenario extends Scenario {
     private static final Logger logger = LogManager.getLogger(JSystemScenario.class);
 
-    public JSystemScenario(String name) {
-        super(name);
+    public JSystemScenario(final Path failedScenarioPath) {
+        super(failedScenarioPath);
     }
 
     @Override
     public void addTest(Test test) {
-        logger.info("Add the test '" + test.getFailMsg() + "' to the JSystem scenario " + name);
+        logger.info("Add the test '" + test.getFailMsg() + "' to the JSystem scenario ");
         tests.add(test);
     }
 
     @Override
     public void save(Path builtScenarioPath) {
-        logger.info("Saving scenario '" + name + "'");
+        logger.info("Saving scenario" );
         tests.forEach(test -> System.out.println("Failed test: " + test.getFailMsg()));
     }
 }
