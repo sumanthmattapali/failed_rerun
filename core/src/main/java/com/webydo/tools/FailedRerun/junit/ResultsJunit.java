@@ -21,7 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Results of JUnit tests running
+ * Results of JUnit failedTests running
  */
 public class ResultsJunit extends Results {
     private static final Logger logger = LogManager.getLogger(ResultsJunit.class);

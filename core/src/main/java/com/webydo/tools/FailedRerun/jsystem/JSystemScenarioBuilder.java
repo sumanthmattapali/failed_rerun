@@ -11,7 +11,7 @@ import java.nio.file.Path;
 import java.security.InvalidParameterException;
 
 /**
- * The builder of a JSystem scenario with failed tests
+ * The builder of a JSystem scenario with failed failedTests
  */
 public class JSystemScenarioBuilder extends RepeatScenarioBuilder {
     private static final Logger logger = LogManager.getLogger(JSystemScenarioBuilder.class);
@@ -21,7 +21,7 @@ public class JSystemScenarioBuilder extends RepeatScenarioBuilder {
 
     /**
      * Constructor
-     * @param reportPath The path of tests report file
+     * @param reportPath The path of failedTests report file
      * @throws InvalidParameterException If path isn't found or initialization from the file has failed
      */
     public JSystemScenarioBuilder(Path reportPath) throws InvalidParameterException {

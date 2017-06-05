@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.security.InvalidParameterException;
 
 /**
- * The builder of a scenario for repeated running failed tests
+ * The builder of a scenario for repeated running failed failedTests
  */
 public abstract class RepeatScenarioBuilder {
     private static final Logger logger = LogManager.getLogger(RepeatScenarioBuilder.class);

@@ -10,7 +10,7 @@ import java.security.InvalidParameterException;
 import static junit.framework.TestCase.assertTrue;
 
 /**
- * Junit results tests
+ * Junit results failedTests
  */
 public class JunitResultsTest {
     Path curDir = new File(".").getAbsoluteFile().toPath();
@@ -42,12 +42,12 @@ public class JunitResultsTest {
     @org.junit.Test
     public void failedTests() {
         ResultsJunit results = new ResultsJunit(Paths.get(curDir + "/src/test/scenarious/jsystem/failed_results.xml"));
-        assertTrue("Checking the number of failed tests in the given JUnit results file", results.getFailedTests().size() == 3);
+        assertTrue("Checking the number of failed failedTests in the given JUnit results file", results.getFailedTests().size() == 3);
     }
 
     @org.junit.Test
     public void noFailedTests() {
         ResultsJunit results = new ResultsJunit(Paths.get(curDir + "/src/test/scenarious/jsystem/no_failed_results.xml"));
-        assertTrue("Checking no failed tests in the given JUnit results file", results.getFailedTests().size() == 0);
+        assertTrue("Checking no failed failedTests in the given JUnit results file", results.getFailedTests().size() == 0);
     }
 }
