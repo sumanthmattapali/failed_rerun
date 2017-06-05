@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuite errors="1" failures="2" hostName="QAauto4-PC" name="JSystem Reporter" tests="37" time="1722.821" timeStamp="Mon May 15 13:06:36 IDT 2017">
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.LoginTest" name="registerUI" time="36.164"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.LoginTest" name="registerLanguages" time="65.134"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.LoginTest" name="registerLinks" time="46.437"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.LoginTest" name="loginUI" time="27.94"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.LoginTest" name="loginValidation" time="37.339"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.LoginTest" name="forgotPassword" time="69.638"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.LoginTest" name="loginLanguages" time="48.732"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.loginArea.SignInOut" name="signInTest" time="51.614"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.InitDashboardTest" name="dashboardPageState" time="14.532"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MySitesGeneralTest" name="siteInboxPopup" time="14.688"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MySitesGeneralTest" name="changeLanguageTest" time="47.62"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MySitesGeneralTest" name="contactSupport" time="18.206"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MySitesGeneralTest" name="searchSite" time="45.505"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MySitesGeneralTest" name="advancedSearchSite" time="27.299"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MySitesGeneralTest" name="switchPageUsingPageNumbers" time="11.611"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MySitesGeneralTest" name="sendPaymetRequest" time="30.553"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.GeneralSettings" name="siteTitleTest" time="26.818"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.GeneralSettings" name="siteLogoTest" time="24.848"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.GeneralSettings" name="siteStatusTest" time="68.405"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.GeneralSettings" name="exportSiteTest" time="29.909"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.CmsSettings" name="addCmsUserTest" time="26.449"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MyAccountTests" name="myAccountChangePassword" time="73.0"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.RedirectionSettings" name="addNewRedirectionTest" time="59.025"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MyPricingPlanTests" name="myPricingPlanUI" time="46.184"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MyBrandingTest" name="dashboardLogoAddRemove" time="84.672"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MyBrandingTest" name="addANewDomainUI" time="14.791"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MyBrandingTest" name="addANewDomainAddRemove" time="95.097"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MyAccountTests" name="myTeamChangeTeamUserPassword" time="66.243"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.ShareTests" name="chooseWebsiteTest" time="21.658"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.MyAccountTests" name="myAccountChangeEmailAddress" time="81.732"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.DomainAndEmailSettings" name="getGmailLinkTest" time="26.1"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.DomainAndEmailSettings" name="learnHowToSetUpDomainLinkTest" time="35.229"/>
+    <testcase classname="jsystem.framework.sut.ChangeSutTest" name="changeSut" time="0.006"/>
+    <testcase classname="com.webydo.automation.dashboard.systemtests.dashboardSite.DomainAndEmailSettings" name="addNewDomainTest" time="80.027"/>
+</testsuite>

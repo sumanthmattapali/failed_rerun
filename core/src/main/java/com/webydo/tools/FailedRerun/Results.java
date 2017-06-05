@@ -4,11 +4,11 @@ import java.nio.file.Path;
 import java.util.List;
 
 /**
- * Created by daniel on 04/06/17.
+ * Results of tests running
  */
 public abstract class Results {
-    protected Path resultsPath;
+    protected final Path resultsPath;
 
-    public Results(Path resultsPath) { this.resultsPath = resultsPath; }
-    abstract protected List<Test> getFailedTests();
+    protected Results(Path resultsPath) { this.resultsPath = resultsPath; }
+    abstract public List<Test> getFailedTests();
 }

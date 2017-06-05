@@ -21,7 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by daniel on 04/06/17.
+ * Results of JUnit tests running
  */
 public class ResultsJunit extends Results {
     private static final Logger logger = LogManager.getLogger(ResultsJunit.class);
@@ -39,15 +39,12 @@ public class ResultsJunit extends Results {
     }
 
     @Override
-    protected List<Test> getFailedTests() {
-        logger.info("Get the the failed test of the JSystem scenario " + resultsPath);
+    public List<Test> getFailedTests() {
         LinkedList<Test> tests = new LinkedList<>();
 
         reportXml.getDocumentElement().normalize();
         final Element root = reportXml.getDocumentElement();
         failedScenarioName = root.getAttribute("name");
-
-        logger.info("Get failed tests of the scenario " + failedScenarioName);
 
         if (hasFailedTests(root)) {
             final NodeList nList = reportXml.getElementsByTagName("testsuite").item(0).getChildNodes();
@@ -69,8 +66,8 @@ public class ResultsJunit extends Results {
         for (String failedTestTagName: failTagNames) {
             child = node.getElementsByTagName(failedTestTagName).item(0);
             if (child != null) {
-                msg       = child.getAttributes().getNamedItem("message").toString();
-                className = node.getAttributes().getNamedItem("classname").toString();
+                msg       = child.getAttributes().getNamedItem("message").getNodeValue().toString();
+                className = node.getAttributes().getNamedItem("classname").getNodeValue().toString();
                 return new JSystemTest(className, msg);
             }
         }
