@@ -19,6 +19,11 @@ public class JSystemScenarioBuilder extends RepeatScenarioBuilder {
     private static JSystemScenario scenario = null;
     private final ResultsJunit results;
 
+    /**
+     * Constructor
+     * @param reportPath The path of tests report file
+     * @throws InvalidParameterException If path isn't found or initialization from the file has failed
+     */
     public JSystemScenarioBuilder(Path reportPath) throws InvalidParameterException {
         super(reportPath);
         results = new ResultsJunit(reportPath);
